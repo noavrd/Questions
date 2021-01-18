@@ -1,2 +1,2 @@
 # Questions
-answering fir 12 questions
+Answers for 12 questions
