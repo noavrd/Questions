@@ -1,24 +1,21 @@
-function happy(num) {
-    let x, y;
-    let z = [];
-    while (num !=1 && x[num] !== true) {
-        z[num] = true;
-        x = 0;  
-        while (0 < num) {
-            y = num % 10 ;
-            x += y * y;
-            num = (num - y) /10 ;
+const history = [];
+let limit = 5;
+for(let i =1 ;limit ; i++){
+    let temp = i;
+    let sum;
+    while (sum !== 1 && history.includes(temp)) {
+        history.push(temp);
+        sum = 0;
+        console.log(temp);
+        while(temp > 0) {
+            const digit = temp%10;
+            sum += digit**2;
+            temp = (temp - digit)/10;
         }
-        num = x;
+        temp = i;
     }
-    return( num === 1);
-}
-let num = 0, count = 0;
-while (count++ < 5)
-{
-    while (!happy(num)){
-    num++;
-    console.log(num);
-    }
-    num++;
+    if (temp === 1) {
+        console.log("the number is happy");
+        limit --;
+    } 
 }
